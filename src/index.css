@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-prime: #050B18;
+    --bg-surface: #0B1426;
+    --bg-card: #101C30;
+    --border-subtle: rgba(72, 199, 255, 0.12);
+    --blue-primary: #00A8E1;
+    --cyan-accent: #48C7FF;
+    --text-primary: #F5F8FC;
+    --text-secondary: #A8B5C8;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-prime);
+    color: var(--text-primary);
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  code, pre, .font-code {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Cinema Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050B18;
+}
+::-webkit-scrollbar-thumb {
+  background: #102342;
+  border-radius: 4px;
+  border: 1px solid rgba(72, 199, 255, 0.15);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00A8E1;
+}
+
+/* Hide scrollbar for carousel rails while preserving scrollability */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Cinematic Glow & Lighting Utilities */
+.prime-glow {
+  box-shadow: 0 0 35px -5px rgba(0, 168, 225, 0.35);
+}
+
+.prime-glow-lg {
+  box-shadow: 0 0 60px -10px rgba(0, 168, 225, 0.45);
+}
+
+.card-shine {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+}
+
+.hero-vignette {
+  background: radial-gradient(circle at 75% 45%, rgba(0, 168, 225, 0.12) 0%, rgba(5, 11, 24, 0.85) 65%, #050B18 100%);
+}
+
+/* Resume Print Styles */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .resume-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: white !important;
+    color: #111827 !important;
+  }
+}
